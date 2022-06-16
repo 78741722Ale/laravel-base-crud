@@ -50,7 +50,7 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
         // Qua mi basta solo ritornare la view
-        dd($comic);
+        /* dd($comic); */
         return view('comics.show', compact('comic'));
     }
 
