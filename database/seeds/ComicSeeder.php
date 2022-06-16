@@ -15,10 +15,11 @@ class ComicSeeder extends Seeder
         $comics = [
             [
                 'title' => 'prova',
-                'comic' => 'prova',
+                'author' => 'prova',
                 'info' => 'prova',
-                'cover_image' => 'prova',
-                'price' => 'prova',
+                'cover_image' => 'https://picsum.photos/200/300',
+                'price' => 299.99,
+                'release' => '25-10-22'
             ]
         ];
         /* Avvio il ciclo ForEach */
@@ -31,6 +32,7 @@ class ComicSeeder extends Seeder
             $new_comics->info = $comic['info']; // Richiamo del Dato info
             $new_comics->cover_image = $comic['cover_image']; // Richiamo del Dato cover_image
             $new_comics->price = $comic['price']; // Richiamo del Dato price
+            $new_comics->release = $comic['release']; // Richiamo del Dato release
             /* Ora salvo */
             $new_comics->save();
         }

@@ -21,6 +21,7 @@ class CreateComicsTable extends Migration
             $table->text('info');
             $table->string('cover_image', 200);
             $table->decimal('price', 5,2);
+            $table->string('release',100);
             $table->timestamps();
         });
     }
