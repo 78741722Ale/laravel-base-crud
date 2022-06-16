@@ -39,7 +39,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         // Questa zona è per il create.blade.php
-        dd($request->all());
+        /* dd($request->all()); */
         /* Avvio l'istanza per il modello e assegno i parametri */
         $comic = new Comic();
         $comic->title = $request['title'];
@@ -48,6 +48,13 @@ class ComicController extends Controller
         $comic->cover_image = $request['cover_image'];
         $comic->price = $request['price'];
         $comic->release = $request['release'];
+        /* Ora salvo l'istanza */
+        $comic->save();
+
+        /* Ora il return del pattern */
+        /* Tutte le volte ritorna il valore creato però nell'index
+        della cartella comics, cosi esce direttamente a schermo */
+        return redirect()->route('comics.index');
     }
 
     /**
