@@ -40,6 +40,14 @@ class ComicController extends Controller
     {
         // Questa zona è per il create.blade.php
         dd($request->all());
+        /* Avvio l'istanza per il modello e assegno i parametri */
+        $comic = new Comic();
+        $comic->title = $request['title'];
+        $comic->author = $request['author'];
+        $comic->info = $request['info'];
+        $comic->cover_image = $request['cover_image'];
+        $comic->price = $request['price'];
+        $comic->release = $request['release'];
     }
 
     /**
