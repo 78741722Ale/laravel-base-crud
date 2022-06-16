@@ -15,6 +15,12 @@ class CreateComicsTable extends Migration
     {
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
+            /* Aggiungo tutti i dati dell'intestazione del fumetto (nome, titolo ecc) */
+            $table->string('title', 100);
+            $table->string('author', 100);
+            $table->text('info');
+            $table->string('cover_image', 200);
+            $table->decimal('price', 5,2);
             $table->timestamps();
         });
     }
