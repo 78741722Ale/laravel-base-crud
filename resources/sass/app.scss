@@ -3,10 +3,13 @@
 
 /* Dimensioni  */
 $header_cont_dimension : 100px;
+$header_bg : crimson;
 $header_width : 100%;
 $main_cont_dimension : calc(100% - 200px);
+$main_bg : rgb(240, 239, 235);
 $main_width : 100%;
 $footer_cont_dimension : 100px;
+$footer_bg : rgb(8, 240, 85);
 $footer_width : 100%;
 
 /**
@@ -15,15 +18,16 @@ $footer_width : 100%;
 * $height => Height of the container
 */
 
-@mixin ContentDimensions($width, $height) {
+@mixin ContentDimensions($width, $height, $bg_color) {
     width: $width;
     height: $height;
+    background-color: $bg_color;
 }
 
-body {@include ContentDimensions(100vw, 100vh);}
-#site_header {@include ContentDimensions($header_width, $header_cont_dimension);}
-#site_main {@include ContentDimensions($main_width, $main_cont_dimension);}
-#site_footer {@include ContentDimensions($footer_width, $footer_cont_dimension);}
+body {@include ContentDimensions(100vw, 100vh, transparent);}
+#site_header {@include ContentDimensions($header_width, $header_cont_dimension, $header_bg);}
+#site_main {@include ContentDimensions($main_width, $main_cont_dimension, $main_bg);}
+#site_footer {@include ContentDimensions($footer_width, $footer_cont_dimension, $footer_bg);}
 
 @mixin positionFlex($display, $justify, $align, $dir) {
     display: $display;
@@ -35,6 +39,3 @@ body {@include ContentDimensions(100vw, 100vh);}
 /* All Flex Positions */
 .flex_cent {@include positionFlex(flex, center, center, row); }
 
-.bordo {
-    border: 1px solid black;
-}

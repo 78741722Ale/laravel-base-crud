@@ -10275,21 +10275,25 @@ textarea.form-control-lg {
 body {
   width: 100vw;
   height: 100vh;
+  background-color: transparent;
 }
 
 #site_header {
   width: 100%;
   height: 100px;
+  background-color: crimson;
 }
 
 #site_main {
   width: 100%;
   height: calc(100% - 200px);
+  background-color: rgb(240, 239, 235);
 }
 
 #site_footer {
   width: 100%;
   height: 100px;
+  background-color: rgb(8, 240, 85);
 }
 
 /* All Flex Positions */
@@ -10298,8 +10302,4 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
-
-.bordo {
-  border: 1px solid black;
 }
