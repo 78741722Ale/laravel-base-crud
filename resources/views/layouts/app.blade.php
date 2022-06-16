@@ -15,7 +15,7 @@
     <!-- /#site_header -->
     @include('partials.header')
     <!-- /#site_main -->
-    <div id="site_main">
+    <div class="flex_cent" id="site_main">
         <!-- Inizializzazione dello Yield -->
         @yield('content')
     </div>
