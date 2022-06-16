@@ -4,7 +4,8 @@
 
     <div class="container h-75 flex_cent">
         <div class="row flex_cent w-100 h-100">
-            <form class="w-50" action="" method="post">
+            <!-- Metodo action che richiama la rotta dello store -->
+            <form class="w-50" action="{{route('comics.store')}}" method="post">
                 <!-- Token di sicurezza -->
                 @csrf
                 <!-- Titolo Fumetto -->
@@ -25,7 +26,7 @@
                 <!-- Info Del Fumetto -->
                 <div class="form-group mb-2">
                     <label for="info" class="form-label pb-1">Info Del Fumetto</label>
-                    <input type="text" id="info" name="info" class="form-control pb-1" placeholder="Info" aria-describedby="infoHelper">
+                    <textarea class="form-control pb-1" id="info" name="info" placeholder="Info" aria-describedby="infoHelper"></textarea>
                 </div>
                 <!-- Prezzo Del Fumetto -->
                 <div class="form-group mb-2">
@@ -37,6 +38,8 @@
                     <label for="release" class="form-label">Rilascio del Fumetto</label>
                     <input type="text" id="release" name="release" class="form-control" placeholder="Data d'uscita" aria-describedby="infoHelper">
                 </div>
+                <!-- Button del Submit -->
+                <button type="submit" class="btn mt-2 btn-primary">Aggiungi</button>
             </form>
         </div>
     </div>

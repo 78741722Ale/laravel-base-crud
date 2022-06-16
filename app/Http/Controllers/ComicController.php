@@ -38,7 +38,8 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Questa zona è per il create.blade.php
+        dd($request->all());
     }
 
     /**
