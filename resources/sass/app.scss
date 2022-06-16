@@ -1,2 +1,43 @@
 // Riferimento a Bootstrap
 @use 'bootstrap';
+
+/* Dimensioni  */
+$header_cont_dimension : 100px;
+$header_width : 100%;
+$main_cont_dimension : calc(100% - 200px);
+$main_width : 100%;
+$footer_cont_dimension : 100px;
+$footer_width : 100%;
+
+/**
+* Mixin required for recalling the measures of the root element
+* $width => Width of the container
+* $height => Height of the container
+*/
+
+@mixin ContentDimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+body {@include ContentDimensions(100vw, 100vh);}
+#site_header {@include ContentDimensions($header_width, $header_cont_dimension);}
+#site_main {@include ContentDimensions($main_width, $main_cont_dimension);}
+#site_footer {@include ContentDimensions($footer_width, $footer_cont_dimension);}
+
+@mixin positionFlex($display, $justify, $align, $dir) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;
+}
+
+/* All Flex Positions */
+.flex_cent {@include positionFlex(flex, center, center, row); }
+
+
+
+
+.bordo {
+    border: 1px solid black;
+}
