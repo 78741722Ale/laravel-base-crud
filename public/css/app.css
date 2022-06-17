@@ -10288,6 +10288,7 @@ body {
   width: 100%;
   height: calc(100% - 200px);
   background-color: rgb(240, 239, 235);
+  overflow-y: auto;
 }
 
 #site_footer {

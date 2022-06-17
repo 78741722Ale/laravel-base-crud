@@ -53,18 +53,23 @@ class ComicController extends Controller
             ]
         );
         /* Verifica dei dati da validare */
-        dd($validate_data);
+        /* dd($validate_data); */
+
+        /* Versione Istanza */
 
         /* Avvio l'istanza per il modello e assegno i parametri */
-        $comic = new Comic();
+        /* $comic = new Comic();
         $comic->title = $request['title'];
         $comic->author = $request['author'];
         $comic->info = $request['info'];
         $comic->cover_image = $request['cover_image'];
         $comic->price = $request['price'];
-        $comic->release = $request['release'];
+        $comic->release = $request['release']; */
         /* Ora salvo l'istanza */
-        $comic->save();
+        /* $comic->save(); */
+
+        /* Versione con Create */
+        Comic::create($validate_data);
 
         /* Ora il return del pattern */
         /* Tutte le volte ritorna il valore creato però nell'index
