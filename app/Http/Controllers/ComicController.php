@@ -45,11 +45,11 @@ class ComicController extends Controller
         $validate_data = $request->validate(
             [
                 'title' => 'required|max:50',
-                'author' => 'nullable',
+                'author' => 'required',
                 'info' => 'required|max:100',
-                'cover_image' => 'nullable',
-                'price' => 'nullable',
-                'release' => 'nullable',
+                'cover_image' => 'required',
+                'price' => 'required',
+                'release' => 'required',
             ]
         );
         /* Verifica dei dati da validare */

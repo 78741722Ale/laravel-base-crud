@@ -21,22 +21,22 @@
                 <!-- Titolo Fumetto -->
                 <div class="form-group mb-2">
                     <label for="title" class="form-label pb-1">Titolo Fumetto</label>
-                    <input type="text" id="title" name="title" class="form-control" placeholder="Scrivi un titolo" aria-describedby="titleHelper">
+                    <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Scrivi un titolo" aria-describedby="titleHelper">
                 </div>
                 <!-- Immagine di un Fumetto -->
                 <div class="form-group mb-2">
                     <label for="cover_image" class="form-label pb-1">Immagine Fumetto</label>
-                    <input type="text" id="cover_image" name="cover_image" class="form-control pb-1" placeholder="https://myimage.png" aria-describedby="coverImageHelper">
+                    <input type="text" id="cover_image" name="cover_image" class="form-control @error('cover_image') is-invalid @enderror pb-1 " placeholder="https://myimage.png" aria-describedby="coverImageHelper">
                 </div>
                 <!-- Autore di un Fumetto -->
                 <div class="form-group mb-2">
                     <label for="author" class="form-label pb-1">Autore Del Fumetto</label>
-                    <input type="text" id="author" name="author" class="form-control pb-1" placeholder="Nome Autore" aria-describedby="authorHelper">
+                    <input type="text" id="author" name="author" class="form-control @error('author') is-invalid @enderror pb-1" placeholder="Nome Autore" aria-describedby="authorHelper">
                 </div>
                 <!-- Info Del Fumetto -->
                 <div class="form-group mb-2">
                     <label for="info" class="form-label pb-1">Info Del Fumetto</label>
-                    <textarea class="form-control pb-1" id="info" name="info" placeholder="Info" aria-describedby="infoHelper"></textarea>
+                    <textarea class="form-control @error('info') is-invalid @enderror pb-1" id="info" name="info" placeholder="Info" aria-describedby="infoHelper"></textarea>
                 </div>
                 <!-- Prezzo Del Fumetto -->
                 <div class="form-group mb-2">
