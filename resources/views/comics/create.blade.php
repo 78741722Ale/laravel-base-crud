@@ -2,10 +2,20 @@
 
 @section ('content')
 
-    <div class="container h-75 flex_cent">
-        <div class="row flex_cent w-100 h-100">
+    <div class="container h-100 flex_cent">
+        <div class="row flex_cent_2 w-100 h-100">
+            <!-- Avvio del request data -->
+            @if ($errors->any())
+                <div class="alert w-50 p-1 alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- Metodo action che richiama la rotta dello store -->
-            <form class="w-50" action="{{route('comics.store')}}" method="post">
+            <form class="w-50 h-75 bordo" action="{{route('comics.store')}}" method="post">
                 <!-- Token di sicurezza -->
                 @csrf
                 <!-- Titolo Fumetto -->

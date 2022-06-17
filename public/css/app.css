@@ -10303,3 +10303,14 @@ body {
   align-items: center;
   flex-direction: row;
 }
+
+.flex_cent_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bordo {
+  border: 1px solid black;
+}

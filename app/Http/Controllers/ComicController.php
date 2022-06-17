@@ -40,6 +40,21 @@ class ComicController extends Controller
     {
         // Questa zona è per il create.blade.php
         /* dd($request->all()); */
+
+        /* VAlidare i Dati */
+        $validate_data = $request->validate(
+            [
+                'title' => 'required|max:50',
+                'author' => 'nullable',
+                'info' => 'required|max:100',
+                'cover_image' => 'nullable',
+                'price' => 'nullable',
+                'release' => 'nullable',
+            ]
+        );
+        /* Verifica dei dati da validare */
+        dd($validate_data);
+
         /* Avvio l'istanza per il modello e assegno i parametri */
         $comic = new Comic();
         $comic->title = $request['title'];

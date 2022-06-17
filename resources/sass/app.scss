@@ -38,4 +38,10 @@ body {@include ContentDimensions(100vw, 100vh, transparent);}
 
 /* All Flex Positions */
 .flex_cent {@include positionFlex(flex, center, center, row); }
+.flex_cent_2 {@include positionFlex(flex, center, center, column); }
 
+
+
+.bordo {
+    border: 1px solid black;
+}
