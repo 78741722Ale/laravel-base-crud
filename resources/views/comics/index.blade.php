@@ -59,7 +59,6 @@
                                         <!-- Button per eliminare -->
                                         <button class="btn btn-danger" type="submit">Delete</button>
                                     </form>
-                                    <button type="button" class="btn btn-primary">Conferma</button>
                                 </div>
                             </div>
                         </div>
