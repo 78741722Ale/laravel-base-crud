@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
-use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -55,7 +54,7 @@ class ComicController extends Controller
         );
 
         /* Versione con Create */
-        $validate_data = $request->validate();
+        /* $validate_data = $request->validate(); */
         Comic::create($validate_data);
 
         /* Ora il return del pattern */
