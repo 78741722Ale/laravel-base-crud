@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -52,23 +53,9 @@ class ComicController extends Controller
                 'release' => 'required',
             ]
         );
-        /* Verifica dei dati da validare */
-        /* dd($validate_data); */
-
-        /* Versione Istanza */
-
-        /* Avvio l'istanza per il modello e assegno i parametri */
-        /* $comic = new Comic();
-        $comic->title = $request['title'];
-        $comic->author = $request['author'];
-        $comic->info = $request['info'];
-        $comic->cover_image = $request['cover_image'];
-        $comic->price = $request['price'];
-        $comic->release = $request['release']; */
-        /* Ora salvo l'istanza */
-        /* $comic->save(); */
 
         /* Versione con Create */
+        $validate_data = $request->validate();
         Comic::create($validate_data);
 
         /* Ora il return del pattern */
@@ -105,13 +92,29 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\ComicRequest  $request
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
     {
-        dd($request->all());
+
+        /* Validare i Dati */
+        $validate_data = $request->validate(
+            [
+                'title' => 'required|max:50',
+                'author' => 'required',
+                'info' => 'required|max:100',
+                'cover_image' => 'required',
+                'price' => 'required',
+                'release' => 'required',
+            ]
+        );
+        /* $validate_data = $request->validate(); */
+        /* Avvio l'update */
+        $comic->update($validate_data);
+        /* Ora eseguo il return */
+        return redirect()->route('comics.index');
     }
 
     /**

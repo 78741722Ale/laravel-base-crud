@@ -32,7 +32,10 @@
                 <td>{{$comic->price}}</td>
                 <td>{{$comic->release}}</td>
                 <!-- Definizione della rotta per view (edit e Delete non si guardano ancora) -->
-                <td><a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">View</a></td>
+                <td>
+                    <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">View</a>
+                    <a class="btn btn-warning" href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                </td>
             </tr>
             @empty
             <p>Non c'è niente qua</p>
