@@ -113,7 +113,7 @@ class ComicController extends Controller
         /* $validate_data = $request->validate(); */
         /* Avvio l'update */
         $comic->update($validate_data);
-        /* Ora eseguo il return */
+        /* Ora eseguo il return della rotta */
         return redirect()->route('comics.index');
     }
 
@@ -125,6 +125,9 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        // Qui si Cancella un record
+        $comic->delete();
+        /* Ora eseguo il return della rotta */
+        return redirect()->route('comics.index');
     }
 }

@@ -33,8 +33,20 @@
                 <td>{{$comic->release}}</td>
                 <!-- Definizione della rotta per view (edit e Delete non si guardano ancora) -->
                 <td>
+                    <!-- Visualizza -->
                     <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">View</a>
+                    <!-- Edita -->
                     <a class="btn btn-warning" href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                </td>
+                <!-- Cancella  -->
+                <td>
+                    <!-- Richiesta Delete -->
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <!-- Button per eliminare -->
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
                 </td>
             </tr>
             @empty
