@@ -98,7 +98,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        /* Qua ritorno la view del form per editare */
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -110,7 +111,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        dd($request);
     }
 
     /**
