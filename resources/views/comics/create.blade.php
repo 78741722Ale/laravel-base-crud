@@ -5,7 +5,7 @@
     <div class="container h-100 flex_cent">
         <div class="row flex_cent_2 w-100 h-100">
             <!-- Section Title -->
-            <h1>Create a Comic</h1>
+            <h1 class="w-50">Create a Comic</h1>
             <!-- Avvio del request data -->
             @if ($errors->any())
                 <div class="alert w-50 p-1 alert-danger">
