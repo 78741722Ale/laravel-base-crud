@@ -37,16 +37,33 @@
                     <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">View</a>
                     <!-- Edita -->
                     <a class="btn btn-warning" href="{{route('comics.edit', $comic->id)}}">Edit</a>
-                </td>
-                <!-- Cancella  -->
-                <td>
-                    <!-- Richiesta Delete -->
-                    <form action="{{route('comics.destroy', $comic->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <!-- Button per eliminare -->
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger btn-md" data-bs-toggle="modal" data-bs-target="#modelId">Delete</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Rimuovi {{$comic->id}} </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Lo vuoi cancellare?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+                                    <!-- Richiesta Delete -->
+                                    <form action="{{route('comics.destroy', $comic->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- Button per eliminare -->
+                                        <button class="btn btn-danger" type="submit">Delete</button>
+                                    </form>
+                                    <button type="button" class="btn btn-primary">Conferma</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
             @empty
